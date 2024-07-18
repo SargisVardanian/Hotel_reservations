@@ -34,27 +34,22 @@ This is a Django-based project for managing hotel room bookings. The project pro
     source venv/bin/activate  # On Windows use `venv\Scripts\activate`
     ```
 
-3. Install the dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4. Apply the migrations:
+3. Apply the migrations:
     ```bash
     python manage.py migrate
     ```
 
-5. Create a superuser:
+4. Create a superuser:
     ```bash
     python manage.py createsuperuser
     ```
 
-6. Run the development server:
+5. Run the development server:
     ```bash
     python manage.py runserver
     ```
 
-7. Open your browser and navigate to `http://127.0.0.1:8000/admin` to access the admin interface and start managing your hotel bookings.
+6. Open your browser and navigate to `http://127.0.0.1:8000/admin` to access the admin interface and start managing your hotel bookings.
 
 ## API Endpoints
 
