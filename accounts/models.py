@@ -1,7 +1,5 @@
-# booking/models.py
 from django.db import models
 from django.conf import settings
-from django.utils import timezone
 from django.contrib.auth.models import AbstractUser
 
 class Room(models.Model):
@@ -22,7 +20,7 @@ class Room(models.Model):
 
 class Booking(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='accounts_bookings')
-    room = models.ForeignKey('Room', on_delete=models.CASCADE)
+    room = models.ForeignKey(Room, on_delete=models.CASCADE)
     check_in = models.DateField()
     check_out = models.DateField()
 

@@ -11,6 +11,7 @@ class RoomAdmin(admin.ModelAdmin):
     def booking_status_info(self, obj):
         return obj.booking_status()
     booking_status_info.short_description = 'Booking Status'
+
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
     list_display = ('user', 'room', 'check_in', 'check_out')

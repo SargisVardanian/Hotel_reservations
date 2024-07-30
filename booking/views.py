@@ -43,24 +43,12 @@ class RoomViewSet(viewsets.ModelViewSet):
     filterset_class = RoomFilter
     ordering_fields = ['price_per_night', 'capacity']
 
-    def get_queryset(self):
-        queryset = super().get_queryset()
-        min_price = self.request.query_params.get('min_price')
-        max_price = self.request.query_params.get('max_price')
-
-        if min_price:
-            queryset = queryset.filter(price_per_night__gte=min_price)
-        if max_price:
-            queryset = queryset.filter(price_per_night__lte=max_price)
-
-        return queryset
-
     @action(detail=False, methods=['get'])
     def available(self, request):
         check_in = request.query_params.get('check_in')
         check_out = request.query_params.get('check_out')
 
-        queryset = self.get_queryset()
+        queryset = self.filter_queryset(self.get_queryset())
 
         if check_in and check_out:
             try:

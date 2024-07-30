@@ -1,7 +1,6 @@
-# accounts/admin.py
 from django.contrib import admin
-from .models import Room, Booking
 from django.utils import timezone
+from .models import Room, Booking
 
 
 class BookingInline(admin.TabularInline):

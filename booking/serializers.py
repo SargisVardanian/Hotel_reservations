@@ -24,3 +24,18 @@ class BookingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Booking
         fields = '__all__'
+
+    def validate(self, data):
+        check_in = data['check_in']
+        check_out = data['check_out']
+        room = data['room']
+
+        # Проверка, что дата заезда раньше даты выезда
+        if check_in >= check_out:
+            raise serializers.ValidationError("Check-in date must be before check-out date.")
+
+        # Проверка, что комната доступна для бронирования на указанные даты
+        if not room.is_available(check_in, check_out):
+            raise serializers.ValidationError("Room is not available for the selected dates.")
+
+        return data
