@@ -82,7 +82,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'hotel_booking',
-        'USER': 'your_username',
+        'USER': 'myuser',
         'PASSWORD': 'sargis_postgres',
         'HOST': 'localhost',
         'PORT': '5432',
@@ -136,4 +136,3 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
 }
-

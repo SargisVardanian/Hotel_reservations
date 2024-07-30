@@ -1,6 +1,6 @@
 # booking/admin.py
 from django.contrib import admin
-from .models import Room
+from .models import Room, Booking
 
 @admin.register(Room)
 class RoomAdmin(admin.ModelAdmin):
@@ -11,10 +11,9 @@ class RoomAdmin(admin.ModelAdmin):
     def booking_status_info(self, obj):
         return obj.booking_status()
     booking_status_info.short_description = 'Booking Status'
-
-# @admin.register(Booking)
-# class BookingAdmin(admin.ModelAdmin):
-#     list_display = ('user', 'room', 'check_in', 'check_out')
-#     search_fields = ('user__username', 'room__name')
-#     ordering = ('check_in',)
-#     list_filter = ('check_in', 'check_out')
+@admin.register(Booking)
+class BookingAdmin(admin.ModelAdmin):
+    list_display = ('user', 'room', 'check_in', 'check_out')
+    search_fields = ('user__username', 'room__name')
+    ordering = ('check_in',)
+    list_filter = ('check_in', 'check_out')

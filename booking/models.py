@@ -42,11 +42,11 @@ class Room(models.Model):
         else:
             return "Available"
 
-# class Booking(models.Model):
-#     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-#     room = models.ForeignKey(Room, on_delete=models.CASCADE)
-#     check_in = models.DateField()
-#     check_out = models.DateField()
-#
-#     def __str__(self):
-#         return f'{self.user.username} - {self.room.name}'
+class Booking(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    room = models.ForeignKey(Room, on_delete=models.CASCADE)
+    check_in = models.DateField()
+    check_out = models.DateField()
+
+    def __str__(self):
+        return f'{self.user.username} - {self.room.name}'
