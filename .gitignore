@@ -1,0 +1,19 @@
+# Python
+*.py[cod]
+__pycache__/
+*.so
+
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+media
+
+# EnviroDnment variables
+.env
+
+# macOS
+.DS_Store
