@@ -1,11 +1,9 @@
 from pathlib import Path
 import environ
 
-# Инициализация
+# Initsializatsiya
 env = environ.Env()
-environ.Env.read_env()  # Чтение .env файла
-
-# Путь к базе директории
+environ.Env.read_env() 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -103,4 +101,4 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
 }
 
-print(f"Loaded SECRET_KEY: {env('SECRET_KEY', default='')}")  # Добавьте эту строку в settings.py
+print(f"Loaded SECRET_KEY: {env('SECRET_KEY', default='')}")  
