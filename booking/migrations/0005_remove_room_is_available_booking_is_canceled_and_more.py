@@ -8,23 +8,27 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('booking', '0004_remove_booking_is_canceled_alter_booking_user'),
+        ("booking", "0004_remove_booking_is_canceled_alter_booking_user"),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='room',
-            name='is_available',
+            model_name="room",
+            name="is_available",
         ),
         migrations.AddField(
-            model_name='booking',
-            name='is_canceled',
+            model_name="booking",
+            name="is_canceled",
             field=models.BooleanField(default=False),
         ),
         migrations.AlterField(
-            model_name='booking',
-            name='user',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='bookings', to=settings.AUTH_USER_MODEL),
+            model_name="booking",
+            name="user",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="bookings",
+                to=settings.AUTH_USER_MODEL,
+            ),
         ),
     ]

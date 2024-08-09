@@ -8,19 +8,37 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('booking', '0007_delete_booking'),
+        ("booking", "0007_delete_booking"),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Booking',
+            name="Booking",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('check_in', models.DateField()),
-                ('check_out', models.DateField()),
-                ('room', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='booking.room')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ("id",
+                 models.BigAutoField(
+                     auto_created=True,
+                     primary_key=True,
+                     serialize=False,
+                     verbose_name="ID",
+                 ),
+                 ),
+                ("check_in",
+                 models.DateField()),
+                ("check_out",
+                 models.DateField()),
+                ("room",
+                 models.ForeignKey(
+                     on_delete=django.db.models.deletion.CASCADE,
+                     to="booking.room"),
+                 ),
+                ("user",
+                 models.ForeignKey(
+                     on_delete=django.db.models.deletion.CASCADE,
+                     to=settings.AUTH_USER_MODEL,
+                 ),
+                 ),
             ],
         ),
     ]

@@ -8,7 +8,7 @@ from drf_yasg import openapi
 schema_view = get_schema_view(
     openapi.Info(
         title="Hotel Booking API",
-        default_version='v1',
+        default_version="v1",
         description="API documentation for Hotel Booking",
     ),
     public=True,
@@ -16,10 +16,13 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include('booking.urls')),
-    path('api/', include('accounts.urls')),
-    path('api-auth/', include('rest_framework.urls')),
-    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path("admin/", admin.site.urls),
+    path("api/", include("booking.urls")),
+    path("api/", include("accounts.urls")),
+    path("api-auth/", include("rest_framework.urls")),
+    path(
+        "swagger/",
+        schema_view.with_ui("swagger", cache_timeout=0),
+        name="schema-swagger-ui",
+    ),
 ]
-
