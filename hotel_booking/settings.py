@@ -1,16 +1,13 @@
 from pathlib import Path
 import environ
 
-<<<<<<< HEAD
-# Initsializatsiya
-env = environ.Env()
-environ.Env.read_env() 
-=======
-#
 # Initsializatsiya
 env = environ.Env()
 environ.Env.read_env()
->>>>>>> bbd854d (Updated requirements with missing dependencies)
+
+# Initsializatsiya
+env = environ.Env()
+environ.Env.read_env()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -107,8 +104,3 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
 }
-<<<<<<< HEAD
-
-print(f"Loaded SECRET_KEY: {env('SECRET_KEY', default='')}")  
-=======
->>>>>>> bbd854d (Updated requirements with missing dependencies)
