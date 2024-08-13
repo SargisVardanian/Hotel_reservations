@@ -98,13 +98,13 @@ class RoomViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
 
 
-class BookingViewSet(viewsets.ModelViewSet):
-    queryset = Booking.objects.all()
-    serializer_class = BookingSerializer
-    permission_classes = [permissions.IsAuthenticated]
-
-    def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
-
-    def get_queryset(self):
-        return self.queryset.filter(user=self.request.user)
+# class BookingViewSet(viewsets.ModelViewSet):
+#     queryset = Booking.objects.all()
+#     serializer_class = BookingSerializer
+#     permission_classes = [permissions.IsAuthenticated]
+#
+#     def perform_create(self, serializer):
+#         serializer.save(user=self.request.user)
+#
+#     def get_queryset(self):
+#         return self.queryset.filter(user=self.request.user)

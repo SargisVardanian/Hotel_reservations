@@ -53,12 +53,6 @@ This is a Django-based project for managing hotel room bookings. The project pro
 
 ## API Endpoints
 
-### Authentication
-
-- `POST /api/auth/login/` - Log in a user.
-- `POST /api/auth/logout/` - Log out the current user.
-- `POST /api/auth/register/` - Register a new user.
-
 ### Rooms
 
 - `GET /api/rooms/` - List all rooms.
